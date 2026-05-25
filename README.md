@@ -52,9 +52,18 @@ make
 ./game questions.txt
 ```
 
-The `solution/` directory contains the complete reference implementation and a
-20-question bank. The `assets/` directory contains the three background PNGs
+The `solution/` directory contains the complete reference implementation.
+The `fixtures/` directory contains the 20-question bank used by the tester.
+The `assets/` directory (inside `solution/`) contains the three background PNGs
 and the bitmap font (see attribution below).
+
+To build the reference solution:
+
+```bash
+cd solution
+make
+./game ../fixtures/questions.txt
+```
 
 ---
 
@@ -66,7 +75,7 @@ explicitly.
 
 Five test categories run sequentially:
 
-1. **Question loading** — 20 questions load from `questions.txt`; first
+1. **Question loading** — 20 questions load from `fixtures/questions.txt`; first
    question text is non-empty.
 2. **Game init** — initial state is `STATE_TITLE`, level 0, safe\_level -1,
    lifelines 7 (all three bits set).
